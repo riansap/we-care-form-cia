@@ -1,0 +1,594 @@
+/**
+ * WeCare Survey - Custom Styles
+ * Styling untuk sidebar, form survei, dan komponen lainnya
+ */
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+    --sidebar-width: 250px;
+    --sidebar-bg: #f8f9fa;
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --wecare-red: #dc3545;
+    --wecare-blue: #0d6efd;
+}
+
+/* ============================================
+   Body & Layout
+   ============================================ */
+body {
+    font-family: 'Sen', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+.sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar-logo .logo-icon {
+    font-size: 1.8rem;
+    color: var(--wecare-red);
+    margin-right: 8px;
+}
+
+.sidebar-logo .logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--wecare-blue);
+    letter-spacing: 0.5px;
+}
+
+.sidebar-logo .logo-tagline {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: -2px;
+    letter-spacing: 1px;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    padding: 10px 0;
+}
+
+.nav-item {
+    margin-bottom: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #202124;
+}
+
+.nav-link.active {
+    background-color: rgba(13, 110, 253, 0.08);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.nav-link i {
+    font-size: 1.125rem;
+    margin-right: 14px;
+    width: 20px;
+    text-align: center;
+    color: inherit;
+}
+
+/* Submenu */
+.nav-submenu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.nav-submenu .nav-link {
+    padding-left: 54px;
+    font-size: 0.8125rem;
+}
+
+.submenu-toggle::after {
+    content: '\F282';
+    font-family: 'bootstrap-icons';
+    margin-left: auto;
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+    color: #5f6368;
+}
+
+.submenu-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 30px 40px;
+    background-color: #fff;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   Survey Detail
+   ============================================ */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.back-link i {
+    margin-right: 8px;
+}
+
+.survey-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.survey-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.survey-period {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Instructions */
+.instructions-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.instructions-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.instructions-list li {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Section Header */
+.section-header {
+    background-color: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* ============================================
+   Survey Form Questions
+   ============================================ */
+.question-container {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.question-container:last-child {
+    border-bottom: none;
+}
+
+.question-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.required-indicator {
+    color: var(--wecare-red);
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+/* Radio Options */
+.option-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.option-item:hover {
+    background-color: #f0f0f0;
+}
+
+.option-item input[type="radio"] {
+    margin-top: 4px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.option-item label {
+    color: var(--text-dark);
+    line-height: 1.6;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.option-item:has(input[type="radio"]:checked) {
+    background-color: rgba(13, 110, 253, 0.08);
+    border: 1px solid rgba(13, 110, 253, 0.3);
+}
+
+/* ============================================
+   Pagination
+   ============================================ */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.pagination-select {
+    padding: 8px 35px 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 140px;
+    text-align: center;
+}
+
+.pagination-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+/* ============================================
+   Navigation Buttons
+   ============================================ */
+.nav-buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.nav-btn-left {
+    flex: 1;
+}
+
+.nav-btn-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-nav {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-prev {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.btn-prev:hover {
+    background-color: #f8f9fa;
+    border-color: var(--text-muted);
+}
+
+.btn-next {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.btn-next:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Legacy nav-buttons class for backwards compatibility */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* ============================================
+   Submit Button (Full Width)
+   ============================================ */
+.btn-submit {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-submit:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+
+/* ============================================
+   Survey List (Index Page)
+   ============================================ */
+.survey-list-item {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.survey-list-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.survey-list-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.survey-list-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.survey-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+/* ============================================
+   Three Dots Menu (Top Right)
+   ============================================ */
+.header-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+}
+
+.menu-dots {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-dots:hover {
+    background-color: #f8f9fa;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 991px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 101;
+        background: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .page-title {
+        font-size: 1.4rem;
+    }
+
+    .option-item {
+        padding: 10px 12px;
+    }
+
+    .pagination-container {
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   Overlay for Mobile
+   ============================================ */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+/* ============================================
+   Utilities
+   ============================================ */
+.text-required {
+    color: var(--wecare-red);
+    font-size: 0.85rem;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.d-none {
+    display: none !important;
+}
