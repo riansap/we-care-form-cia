@@ -384,10 +384,10 @@ function validateCurrentSection() {
         }
     });
 
-    if (!isValid && firstInvalid) {
-        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        alert('Mohon jawab semua pertanyaan yang wajib diisi pada halaman ini.');
-    }
+    // if (!isValid && firstInvalid) {
+    //     firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //     alert('Mohon jawab semua pertanyaan yang wajib diisi pada halaman ini.');
+    // }
 
     return isValid;
 }

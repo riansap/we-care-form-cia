@@ -1,274 +1,352 @@
 /**
- * WeCare Survey Data
- * Struktur data untuk pertanyaan survei yang diorganisir per section
+ * WeCare Survey Data — Revised 2025
+ * Survei internal ADM: Beban Kerja, Tenaga Kerja, Forecasting APD, WeCare, Optimalisasi Stok
  */
 
 const surveyData = {
-    title: "ADM Safety Culture Level Survey 2025 [Foreman - Supervisor]",
-    period: "01/01/2025 - 31/01/2026",
+    title: "Survei Internal ADM: Beban Kerja, Ketersediaan APD & Layanan WeCare",
+    period: "01/01/2025 - 31/12/2025",
     instructions: [
-        "Kuesioner ini merupakan kuesioner untuk menilai Safety Culture Level di PT. Astra Daihatsu Motor (ADM).",
-        "Kuesioner ini terdiri dari 10 pertanyaan (nomor 1 s/d 10) dan setiap pertanyaan memiliki 4 pilihan jawaban.",
-        "Pastikan anda membaca semua pilihan jawaban yang tersedia.",
-        "Anda diminta untuk memilih salah satu pilihan jawaban yang dianggap paling sesuai dengan kondisi di ADM saat ini."
+        "Survei ini bertujuan untuk memahami kondisi aktual terkait beban kerja, ketersediaan tenaga kerja, sistem pengadaan dan pengelolaan APD, serta efektivitas layanan WeCare di PT. Astra Daihatsu Motor.",
+        "Survei terdiri dari 5 bagian dengan total 27 pertanyaan. Setiap pertanyaan memiliki 4 pilihan jawaban.",
+        "Harap pilih satu jawaban yang paling mencerminkan pengalaman atau persepsi Anda saat ini.",
+        "Jawaban Anda bersifat anonim dan hanya digunakan untuk perbaikan sistem kerja internal."
     ],
     sections: [
         {
-            id: "A",
-            title: "Section A - Rencana Kerja",
+            id: "beban-kerja",
+            title: "Beban Kerja",
             questions: [
                 {
                     number: 1,
-                    text: " Rencana Kerja, termasuk Permit To Work",
+                    text: "Volume pekerjaan yang saya terima sesuai dengan tanggung jawab jabatan saya.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Kompetensi menjadi isu penting. Karyawan memahami manfaat pelatihan dan terbuka kesempatan untuk meningkatkan skill. Kebutuhan pelatihan diawali dengan identifikasi dari karyawan."
-                        },
-                        {
-                            value: "b",
-                            text: "Rencana kerja dibuat berdasarkan terjadinya kesalahan sebelumnya. Rencana kerja dianggap sebagai suatu proses informal saja dan lebih ditekankan pada waktu yang dibutuhkan untuk penyelesaian pekerjaan."
-                        },
-                        {
-                            value: "c",
-                            text: "Perencanaan merupakan aktivitas standar yang kemudian ditindaklanjuti dan dievaluasi keefektifannya. Namun demikian, implementasinya tidak selalu efektif."
-                        },
-                        {
-                            value: "d",
-                            text: "Banyak rencana kerja hanya memfokuskan pada masalah perijinan saja. Sistem dan prosedur yang ada telah dianggap bagus. Namun tidak selalu konsisten dan masih kurang dilakukan evaluasi pada perencanaan kualitas."
-                        }
+                        { value: "a", text: "Sangat setuju — beban kerja sangat proporsional" },
+                        { value: "b", text: "Setuju — umumnya sesuai, meski kadang ada fluktuasi" },
+                        { value: "c", text: "Kurang setuju — sering melebihi kapasitas ideal" },
+                        { value: "d", text: "Tidak setuju — beban kerja jauh melebihi tanggung jawab jabatan" }
                     ]
                 },
                 {
                     number: 2,
-                    text: " Bagaimana pelaksanaan rapat HSE?",
+                    text: "Target penyelesaian pekerjaan di unit saya realistis dan dapat dicapai.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Rapat HSE dilaksanakan secara rutin dengan agenda yang jelas dan tindak lanjut yang terukur. Semua level manajemen berpartisipasi aktif."
-                        },
-                        {
-                            value: "b",
-                            text: "Rapat HSE dilaksanakan jika ada insiden atau permintaan dari manajemen. Tidak ada agenda tetap dan tindak lanjut sering terabaikan."
-                        },
-                        {
-                            value: "c",
-                            text: "Rapat HSE dilaksanakan secara berkala namun partisipasi terbatas. Agenda sudah ada tetapi implementasi tindak lanjut belum konsisten."
-                        },
-                        {
-                            value: "d",
-                            text: "Rapat HSE jarang dilaksanakan. Jika ada, hanya formalitas tanpa pembahasan substansial dan tanpa dokumentasi yang memadai."
-                        }
+                        { value: "a", text: "Sangat realistis — target selalu dapat dicapai tanpa tekanan berlebihan" },
+                        { value: "b", text: "Cukup realistis — sebagian besar target tercapai dengan usaha wajar" },
+                        { value: "c", text: "Kurang realistis — sering memerlukan lembur atau tekanan tinggi" },
+                        { value: "d", text: "Tidak realistis — target sulit atau hampir tidak mungkin dicapai" }
                     ]
-                }
-            ]
-        },
-        {
-            id: "B",
-            title: "Section B - HSE Meeting & Komunikasi",
-            questions: [
+                },
                 {
                     number: 3,
-                    text: " Bagaimana komunikasi terkait isu-isu keselamatan kerja?",
+                    text: "Beban kerja kadang mengharuskan saya bekerja dengan tempo yang cepat.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Komunikasi keselamatan berjalan dua arah secara efektif. Karyawan bebas menyampaikan concern dan mendapat respons yang memadai dari manajemen."
-                        },
-                        {
-                            value: "b",
-                            text: "Komunikasi keselamatan hanya satu arah dari manajemen ke karyawan. Feedback dari karyawan jarang ditindaklanjuti."
-                        },
-                        {
-                            value: "c",
-                            text: "Ada upaya komunikasi dua arah namun belum optimal. Beberapa feedback ditindaklanjuti tetapi tidak semua."
-                        },
-                        {
-                            value: "d",
-                            text: "Komunikasi keselamatan sangat terbatas. Informasi hanya disampaikan melalui poster atau pengumuman tanpa dialog."
-                        }
+                        { value: "a", text: "Jarang — tempo kerja umumnya stabil dan terkontrol" },
+                        { value: "b", text: "Kadang-kadang — terjadi hanya saat peak season atau insiden" },
+                        { value: "c", text: "Sering — hampir setiap minggu harus bekerja dalam tekanan waktu" },
+                        { value: "d", text: "Hampir selalu — ritme kerja sangat cepat dan melelahkan" }
                     ]
                 },
                 {
                     number: 4,
-                    text: " Bagaimana keterlibatan karyawan dalam program HSE?",
+                    text: "Saya sering merasa kelelahan karena intensitas pekerjaan yang tinggi.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Karyawan aktif terlibat dalam berbagai program HSE seperti safety patrol, hazard reporting, dan improvement suggestion. Ada reward system yang jelas."
-                        },
-                        {
-                            value: "b",
-                            text: "Keterlibatan karyawan minimal dan hanya jika diwajibkan. Tidak ada inisiatif dari karyawan untuk program HSE."
-                        },
-                        {
-                            value: "c",
-                            text: "Beberapa karyawan terlibat aktif namun mayoritas pasif. Program HSE masih didominasi oleh tim HSE saja."
-                        },
-                        {
-                            value: "d",
-                            text: "Karyawan tidak terlibat sama sekali dalam program HSE. Semua program dijalankan oleh tim HSE tanpa partisipasi karyawan."
-                        }
+                        { value: "a", text: "Tidak pernah — saya mampu mengelola energi dengan baik" },
+                        { value: "b", text: "Jarang — hanya saat beban kerja sangat tinggi sementara" },
+                        { value: "c", text: "Cukup sering — terjadi beberapa kali dalam sebulan" },
+                        { value: "d", text: "Sering — hampir setiap minggu saya merasa kelelahan fisik/mental" }
                     ]
-                }
-            ]
-        },
-        {
-            id: "C",
-            title: "Section C - Prosedur Kerja",
-            questions: [
+                },
                 {
                     number: 5,
-                    text: " Bagaimana kepatuhan terhadap prosedur kerja yang ada?",
+                    text: "Fasilitas dan alat kerja membantu mempercepat penyelesaian tugas.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Prosedur yang ada dikembangkan dan direview secara berkala oleh seluruh karyawan. Prosedur yang ada dikembangkan untuk menyesuaikan dengan tugas pekerjaan. Beberapa prosedur yang tidak lagi sesuai dan tidak dibutuhkan maka dihapuskan."
-                        },
-                        {
-                            value: "b",
-                            text: "Telah ada review dan pengembangan prosedur yang dilakukan untuk meyakinkan bahwa prosedur-prosedur yang ada telah sesuai dengan perkembangan pekerjaan. Jika karyawan merasa bahwa mereka harus bekerja diluar prosedur, maka prosedur tersebut direview kembali."
-                        },
-                        {
-                            value: "c",
-                            text: "Prosedur yang ada hanya direview setelah terjadi kecelakaan. Tim HSE yang melakukan review, dan pengembangan prosedur."
-                        },
-                        {
-                            value: "d",
-                            text: "Telah ada review dan pengembangan prosedur. Banyak waktu dan upaya yang diluangkan untuk mengembangkan dan mereview prosedur, namun kadang-kadang tidak sesuai dengan kebutuhan yang ada. Divisi HSE yang mengembangkan prosedur keselamatan dan memaksakan agar prosedur tersebut diikuti."
-                        }
+                        { value: "a", text: "Sangat membantu — alat modern dan kondisi prima" },
+                        { value: "b", text: "Cukup membantu — alat berfungsi baik namun ada ruang peningkatan" },
+                        { value: "c", text: "Kurang membantu — alat sering bermasalah atau tidak memadai" },
+                        { value: "d", text: "Tidak membantu — fasilitas/alat menghambat produktivitas" }
                     ]
                 },
                 {
                     number: 6,
-                    text: " Bagaimana pengelolaan dokumen prosedur kerja?",
+                    text: "Beban kerja akan lebih ringan apabila jumlah tenaga kerja ditambah.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Dokumen prosedur terkelola dengan baik dalam sistem digital yang mudah diakses. Update dilakukan secara real-time dan ada notifikasi untuk perubahan."
-                        },
-                        {
-                            value: "b",
-                            text: "Dokumen prosedur ada tetapi tersebar di berbagai lokasi. Sulit menemukan versi terbaru dan sering terjadi penggunaan dokumen kadaluarsa."
-                        },
-                        {
-                            value: "c",
-                            text: "Ada sistem pengelolaan dokumen namun belum sepenuhnya digital. Proses update memakan waktu dan distribusi tidak merata."
-                        },
-                        {
-                            value: "d",
-                            text: "Tidak ada sistem pengelolaan dokumen yang jelas. Prosedur hanya dalam bentuk hardcopy yang tidak terkontrol."
-                        }
+                        { value: "a", text: "Sangat setuju — penambahan SDM sangat diperlukan" },
+                        { value: "b", text: "Setuju — akan membantu, meski optimasi proses juga penting" },
+                        { value: "c", text: "Netral — beban kerja bisa diatasi dengan redistribusi tugas" },
+                        { value: "d", text: "Tidak setuju — masalah bukan pada jumlah, tapi pada efisiensi sistem" }
                     ]
                 }
             ]
         },
         {
-            id: "D",
-            title: "Section D - Incident Report & Investigation",
+            id: "jumlah-tenaga-kerja",
+            title: "Jumlah Tenaga Kerja",
             questions: [
                 {
-                    number: 7,
-                    text: "Bagaimana proses pelaporan insiden di tempat kerja?",
+                    number: 1,
+                    text: "Jumlah tenaga kerja saat ini memadai untuk kebutuhan operasional.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Semua insiden termasuk near miss dilaporkan tanpa takut akan konsekuensi negatif. Ada sistem pelaporan yang mudah dan cepat diakses."
-                        },
-                        {
-                            value: "b",
-                            text: "Hanya insiden besar yang dilaporkan. Karyawan enggan melaporkan near miss karena takut disalahkan atau ada konsekuensi negatif."
-                        },
-                        {
-                            value: "c",
-                            text: "Insiden dilaporkan tetapi tidak konsisten. Beberapa near miss dilaporkan namun banyak yang tidak tercatat."
-                        },
-                        {
-                            value: "d",
-                            text: "Pelaporan insiden sangat minim. Karyawan cenderung menyembunyikan insiden untuk menghindari masalah."
-                        }
+                        { value: "a", text: "Sangat memadai — kapasitas SDM melebihi kebutuhan" },
+                        { value: "b", text: "Cukup memadai — mampu menangani beban normal" },
+                        { value: "c", text: "Kurang memadai — sering kewalahan saat beban meningkat" },
+                        { value: "d", text: "Tidak memadai — selalu kekurangan tenaga di berbagai shift/unit" }
                     ]
                 },
                 {
-                    number: 8,
-                    text: " Bagaimana investigasi insiden dilakukan?",
+                    number: 2,
+                    text: "Pembagian tugas antar karyawan dalam divisi sudah merata.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Investigasi dilakukan secara menyeluruh untuk menemukan root cause. Fokus pada perbaikan sistem bukan mencari kesalahan individu. Hasil investigasi disebarluaskan sebagai pembelajaran."
-                        },
-                        {
-                            value: "b",
-                            text: "Investigasi dilakukan hanya untuk insiden besar dan fokus mencari siapa yang salah. Tindakan korektif terbatas pada individu yang terlibat."
-                        },
-                        {
-                            value: "c",
-                            text: "Investigasi dilakukan tetapi tidak selalu mendalam. Root cause kadang ditemukan tetapi tindak lanjut tidak konsisten."
-                        },
-                        {
-                            value: "d",
-                            text: "Investigasi jarang dilakukan atau hanya formalitas. Tidak ada pembelajaran yang diambil dari insiden yang terjadi."
-                        }
+                        { value: "a", text: "Sangat merata — tidak ada beban berlebih pada individu tertentu" },
+                        { value: "b", text: "Cukup merata — mayoritas tugas terdistribusi baik" },
+                        { value: "c", text: "Kurang merata — beberapa rekan sering menanggung lebih banyak" },
+                        { value: "d", text: "Tidak merata — beban sangat timpang, tergantung senioritas/relasi" }
+                    ]
+                },
+                {
+                    number: 3,
+                    text: "Peningkatan volume produksi berdampak pada peningkatan beban kerja.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Tidak berdampak — sistem penyesuaian otomatis (SDM/shift) responsif" },
+                        { value: "b", text: "Ber dampak ringan — terkelola dengan baik melalui redistribusi" },
+                        { value: "c", text: "Ber dampak cukup besar — memerlukan lembur rutin" },
+                        { value: "d", text: "Ber dampak signifikan — mengganggu kesehatan & keselamatan kerja" }
+                    ]
+                },
+                {
+                    number: 4,
+                    text: "Perusahaan menambah tenaga kerja ketika terdapat lonjakan pekerjaan.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Selalu — respons cepat dan tepat sebelum beban kritis" },
+                        { value: "b", text: "Biasanya — meski kadang terlambat beberapa hari" },
+                        { value: "c", text: "Jarang — penambahan terjadi setelah keluhan banyak muncul" },
+                        { value: "d", text: "Hampir tidak pernah — lonjakan ditanggung oleh SDM eksisting" }
+                    ]
+                },
+                {
+                    number: 5,
+                    text: "Ketersediaan tenaga kerja yang ideal dapat mempercepat proses pekerjaan.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat setuju — SDM adalah faktor kunci efisiensi" },
+                        { value: "b", text: "Setuju — dengan jumlah ideal, proses lebih lancar dan aman" },
+                        { value: "c", text: "Ragu-ragu — efisiensi lebih bergantung pada sistem dibanding jumlah" },
+                        { value: "d", text: "Tidak setuju — penambahan SDM tanpa perbaikan sistem justru boros" }
                     ]
                 }
             ]
         },
         {
-            id: "E",
-            title: "Section E - Safety Leadership",
+            id: "forecasting-apd",
+            title: "Forecasting Pengadaan APD",
             questions: [
                 {
-                    number: 9,
-                    text: " Bagaimana komitmen manajemen terhadap keselamatan kerja?",
+                    number: 1,
+                    text: "Data historis penukaran APD akurat dan dapat dipercaya.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Manajemen menunjukkan komitmen nyata melalui tindakan, bukan hanya kata-kata. Safety menjadi prioritas utama dalam setiap keputusan bisnis."
-                        },
-                        {
-                            value: "b",
-                            text: "Manajemen menyatakan komitmen tetapi tindakan tidak konsisten. Production seringkali lebih diprioritaskan daripada safety."
-                        },
-                        {
-                            value: "c",
-                            text: "Ada komitmen dari sebagian manajemen tetapi belum merata. Beberapa manajer lebih memprioritaskan safety daripada yang lain."
-                        },
-                        {
-                            value: "d",
-                            text: "Komitmen manajemen terhadap safety sangat rendah. Safety dianggap sebagai cost center dan penghambat produktivitas."
-                        }
+                        { value: "a", text: "Sangat akurat — semua transaksi terekam lengkap & valid" },
+                        { value: "b", text: "Cukup akurat — mayoritas data valid meski ada minor error" },
+                        { value: "c", text: "Kurang akurat — sering ada duplikasi atau data tidak tercatat" },
+                        { value: "d", text: "Tidak akurat — banyak transaksi tidak terdokumentasi" }
                     ]
                 },
                 {
-                    number: 10,
-                    text: " Laporan Bahaya dan tindakan yang tidak aman",
+                    number: 2,
+                    text: "Data historis APD mudah diakses ketika diperlukan.",
                     required: true,
                     options: [
-                        {
-                            value: "a",
-                            text: "Laporan keselamatan bersifat sederhana dan faktual. Selain itu isinya cenderung memfokuskan pada penentuan bagian mana yang menyebabkan timbulnya suatu insiden. Perusahaan tidak melakukan tindakan pelacakan setelah laporan dikumpulkan."
-                        },
-                        {
-                            value: "b",
-                            text: "Telah ada laporan keselamatan dalam format baku, yg dilengkapi dokumen penunjang. Seluruh bagian pada laporan harus dilengkapi."
-                        },
-                        {
-                            value: "c",
-                            text: "Laporan keselamatan lebih mencari faktor 'mengapa' dibandingkan faktor 'apa' dan 'kapan'. Mengutamakan pengumpulan laporan yang cepat, dan diperkenankan untuk mengosongkan beberapa bagian dalam formulir untuk diisi kemudian."
-                        },
-                        {
-                            value: "d",
-                            text: "Manajemen senior secara rutin terlibat dan menetapkan sasaran laporan. Laporan keselamatan mudah untuk disebarkan ke seluruh organisasi dengan menggunakan database yang dapat diakses secara luas."
-                        }
+                        { value: "a", text: "Sangat mudah — tersedia real-time di dashboard digital" },
+                        { value: "b", text: "Cukup mudah — bisa diakses dalam 1–2 hari kerja" },
+                        { value: "c", text: "Kurang mudah — perlu proses permohonan dan tunggu lama" },
+                        { value: "d", text: "Sulit diakses — tidak ada sistem terpusat, data tersebar manual" }
+                    ]
+                },
+                {
+                    number: 3,
+                    text: "Analisis data diperlukan sebelum melakukan forecasting pengadaan APD.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Selalu dilakukan — analisis jadi dasar utama keputusan" },
+                        { value: "b", text: "Biasanya dilakukan — kecuali situasi darurat" },
+                        { value: "c", text: "Jarang dilakukan — sering berdasarkan perkiraan kasar" },
+                        { value: "d", text: "Tidak pernah — pengadaan berdasarkan stok habis atau permintaan ad-hoc" }
+                    ]
+                },
+                {
+                    number: 4,
+                    text: "Tren penggunaan APD dapat diamati dari data historis.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat jelas — pola musiman/shift/unit terlihat dari visualisasi" },
+                        { value: "b", text: "Cukup jelas — tren bisa diidentifikasi dengan olah data sederhana" },
+                        { value: "c", text: "Kurang jelas — data mentah, perlu effort besar untuk analisis" },
+                        { value: "d", text: "Tidak terlihat — tidak ada pola atau data tidak konsisten" }
+                    ]
+                },
+                {
+                    number: 5,
+                    text: "Analisa data membantu memperkirakan kebutuhan APD dengan lebih tepat.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat membantu — forecasting akurat >90%" },
+                        { value: "b", text: "Cukup membantu — akurasi sekitar 70–80%" },
+                        { value: "c", text: "Sedikit membantu — masih sering kelebihan/kekurangan stok" },
+                        { value: "d", text: "Tidak membantu — forecasting sering meleset signifikan" }
+                    ]
+                },
+                {
+                    number: 6,
+                    text: "Hasil forecasting pengadaan APD sesuai dengan kebutuhan penggunaan di lapangan.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat sesuai — stok selalu adekuat tanpa kelebihan signifikan" },
+                        { value: "b", text: "Cukup sesuai — minor adjustment masih diperlukan" },
+                        { value: "c", text: "Kurang sesuai — sering terjadi kekurangan/kelebihan stok" },
+                        { value: "d", text: "Tidak sesuai — forecasting tidak mencerminkan kebutuhan aktual" }
+                    ]
+                }
+            ]
+        },
+        {
+            id: "wecare",
+            title: "One System Layanan WeCare",
+            questions: [
+                {
+                    number: 1,
+                    text: "WeCare mudah diakses untuk kebutuhan permintaan APD.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat mudah — akses via web/mobile, antarmuka intuitif" },
+                        { value: "b", text: "Cukup mudah — ada sedikit kurva belajar awal" },
+                        { value: "c", text: "Kurang mudah — sering error atau lambat saat submit" },
+                        { value: "d", text: "Sulit diakses — proses bertele-tele atau sering down" }
+                    ]
+                },
+                {
+                    number: 2,
+                    text: "WeCare memberikan respon cepat terhadap permintaan penukaran APD.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat cepat — permintaan diproses dalam hitungan jam" },
+                        { value: "b", text: "Cepat — diproses dalam 1 hari kerja" },
+                        { value: "c", text: "Lambat — butuh 2–3 hari kerja untuk respon awal" },
+                        { value: "d", text: "Sangat lambat — lebih dari 3 hari atau sering tertunda" }
+                    ]
+                },
+                {
+                    number: 3,
+                    text: "Proses administrasi melalui WeCare lebih praktis dibanding cara manual.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Jauh lebih praktis — menghemat waktu dan mengurangi kesalahan" },
+                        { value: "b", text: "Lebih praktis — meski kadang perlu input tambahan" },
+                        { value: "c", text: "Hampir sama — tidak ada peningkatan signifikan" },
+                        { value: "d", text: "Lebih merepotkan — proses digital justru memperpanjang alur" }
+                    ]
+                },
+                {
+                    number: 4,
+                    text: "Informasi stok dan riwayat penukaran APD tercatat dengan jelas dalam sistem.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat jelas — riwayat lengkap, real-time, dan bisa dilacak per individu" },
+                        { value: "b", text: "Cukup jelas — data tersedia tapi tampilan bisa lebih baik" },
+                        { value: "c", text: "Kurang jelas — info stok sering tidak update atau ambigu" },
+                        { value: "d", text: "Tidak jelas — sulit mencari riwayat penukaran atau cek stok" }
+                    ]
+                },
+                {
+                    number: 5,
+                    text: "Data yang tersimpan pada WeCare berguna dalam proses pengambilan keputusan.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat berguna — menjadi dasar utama perencanaan & evaluasi" },
+                        { value: "b", text: "Berguna — digunakan secara berkala untuk pelaporan" },
+                        { value: "c", text: "Sedikit berguna — data belum terolah optimal" },
+                        { value: "d", text: "Tidak berguna — data tidak diintegrasikan ke sistem pengambilan keputusan" }
+                    ]
+                }
+            ]
+        },
+        {
+            id: "optimalisasi-stok",
+            title: "Optimalisasi Stok",
+            questions: [
+                {
+                    number: 1,
+                    text: "Stok APD selalu tersedia saat dibutuhkan.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat tersedia — tidak pernah kehabisan di semua lokasi" },
+                        { value: "b", text: "Umumnya tersedia — kehabisan hanya pada item spesifik/rare" },
+                        { value: "c", text: "Kadang tidak tersedia — kehabisan terjadi beberapa kali/bulan" },
+                        { value: "d", text: "Sering tidak tersedia — permintaan sering ditolak karena stok kosong" }
+                    ]
+                },
+                {
+                    number: 2,
+                    text: "Penggantian APD dapat diproses dalam waktu yang cepat.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat cepat — ≤1 jam dari permintaan disetujui" },
+                        { value: "b", text: "Cepat — dalam 1 hari kerja" },
+                        { value: "c", text: "Lambat — butuh 2–3 hari" },
+                        { value: "d", text: "Sangat lambat — >3 hari atau sering tertunda" }
+                    ]
+                },
+                {
+                    number: 3,
+                    text: "Sistem pengelolaan stok mencegah terjadinya kekurangan APD.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat efektif — kekurangan hampir tidak pernah terjadi" },
+                        { value: "b", text: "Cukup efektif — kekurangan jarang dan cepat diatasi" },
+                        { value: "c", text: "Kurang efektif — kekurangan masih sering terjadi" },
+                        { value: "d", text: "Tidak efektif — sistem gagal mencegah kekurangan berulang" }
+                    ]
+                },
+                {
+                    number: 4,
+                    text: "Sistem pengelolaan stok mencegah penumpukan APD berlebih.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat efektif — stok optimal, minim expired/obsolete" },
+                        { value: "b", text: "Cukup efektif — ada sedikit kelebihan, tapi terkelola" },
+                        { value: "c", text: "Kurang efektif — sering ada stok mengendap di gudang" },
+                        { value: "d", text: "Tidak efektif — banyak APD kadaluarsa atau rusak karena menumpuk" }
+                    ]
+                },
+                {
+                    number: 5,
+                    text: "APD yang diberikan memiliki kualitas baik dan konsisten.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat baik & konsisten — memenuhi standar tertinggi" },
+                        { value: "b", text: "Baik — jarang ada keluhan kualitas" },
+                        { value: "c", text: "Cukup — beberapa item mutu tidak stabil (misal ukuran, bahan)" },
+                        { value: "d", text: "Buruk — sering tidak nyaman, rusak cepat, atau tidak sesuai fungsi" }
+                    ]
+                },
+                {
+                    number: 6,
+                    text: "Forecasting pengadaan APD membantu menjaga ketersediaan stok.",
+                    required: true,
+                    options: [
+                        { value: "a", text: "Sangat membantu — stok stabil sepanjang tahun" },
+                        { value: "b", text: "Membantu — meski kadang perlu penyesuaian darurat" },
+                        { value: "c", text: "Sedikit membantu — stok masih fluktuatif" },
+                        { value: "d", text: "Tidak membantu — stok sering kosong atau menumpuk tanpa pola" }
                     ]
                 }
             ]
