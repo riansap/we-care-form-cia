@@ -9,8 +9,7 @@ const surveyData = {
   period: "01/01/2025 - 31/12/2025",
   instructions: [
     "Survei ini bertujuan untuk memahami kondisi aktual terkait beban kerja, ketersediaan tenaga kerja, sistem pengadaan dan pengelolaan APD, serta efektivitas layanan WeCare di PT. Astra Daihatsu Motor.",
-    "Survei terdiri dari 5 bagian dengan total 27 pertanyaan. Setiap pertanyaan menggunakan skala 5 poin:",
-    " • 1 = Sangat Tidak Setuju • 2 = Tidak Setuju • 3 = Netral • 4 = Setuju • 5 = Sangat Setuju",
+    "Survei terdiri dari 5 bagian dengan total 27 pertanyaan. Setiap pertanyaan menggunakan skala 5 poin: 1 = Sangat Tidak Setuju, 2 = Tidak Setuju, 3 = Netral, 4 = Setuju, dan 5 = Sangat Setuju.",
     "Harap pilih satu jawaban yang paling mencerminkan pengalaman atau persepsi Anda saat ini.",
     "Jawaban Anda bersifat anonim dan hanya digunakan untuk perbaikan sistem kerja internal.",
   ],
