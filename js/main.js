@@ -82,7 +82,7 @@ function renderInstructions() {
   html += '<ol class="instructions-list">';
 
   surveyData.instructions.forEach((instruction) => {
-    html += `<li>${instruction}</li>`;
+    html += `<li>${instruction.replace(/\n/g, "<br>")}</li>`;
   });
 
   html += "</ol>";
@@ -130,32 +130,54 @@ function renderQuestion(question) {
     ? '<span class="required-indicator">*This field is required</span>'
     : "";
 
+  // Build rating-style row: left label (e.g. "Sangat Tidak Setuju"),
+  // five radio buttons (no visible per-button text), and right label
+  // (e.g. "Sangat Setuju"). Use aria-labels for accessibility.
+  const leftLabelRaw =
+    question.options && question.options[0] && question.options[0].text
+      ? question.options[0].text.replace(/^\d+\.\s*/, "")
+      : "Sangat Tidak Setuju";
+  const rightLabelRaw =
+    question.options && question.options.length
+      ? question.options[question.options.length - 1].text.replace(
+          /^\d+\.\s*/,
+          ""
+        )
+      : "Sangat Setuju";
+
   let html = `
         <div class="question-container" data-question="${question.number}">
             <div class="question-label">
                 ${question.number}. ${question.text} ${requiredText}
             </div>
-            <div class="options-list">
-    `;
+            <div class="options-list rating-row">
+                <div class="rating-left">${leftLabelRaw}</div>
+                <div class="rating-scale">
+`;
 
-  question.options.forEach((option, index) => {
+  question.options.forEach((option) => {
     const optionId = `q${question.number}_${option.value}`;
     const savedValue = answers[question.number];
-    const isChecked = savedValue === option.value ? "checked" : "";
+    const isChecked = savedValue == option.value ? "checked" : "";
 
+    // Render the radio input and an empty label (visual marker handled by CSS).
+    // Provide an explicit aria-label for screen readers.
     html += `
-            <div class="option-item">
-                <input type="radio" 
-                       id="${optionId}" 
-                       name="question_${question.number}" 
-                       value="${option.value}"
-                       ${isChecked}>
-                <label for="${optionId}">${option.text}</label>
-            </div>
-        `;
+                    <div class="rating-option">
+                        <input type="radio"
+                               id="${optionId}"
+                               name="question_${question.number}"
+                               value="${option.value}"
+                               ${isChecked}
+                               aria-label="${option.text}">
+                        <label for="${optionId}"></label>
+                    </div>
+`;
   });
 
   html += `
+                </div>
+                <div class="rating-right">${rightLabelRaw}</div>
             </div>
         </div>
     `;
