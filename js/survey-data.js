@@ -98,7 +98,7 @@ const surveyData = {
       questions: [
         {
           number: 1,
-          text: "Jumlah tenaga kerja saat ini memadai untuk kebutuhan operasional.",
+          text: " Jumlah tenaga kerja saat ini memadai untuk kebutuhan operasional.",
           required: true,
           options: [
             { value: 1, text: "1. Sangat Tidak Setuju" },
