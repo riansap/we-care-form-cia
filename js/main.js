@@ -140,9 +140,9 @@ function renderQuestion(question) {
   const rightLabelRaw =
     question.options && question.options.length
       ? question.options[question.options.length - 1].text.replace(
-          /^\d+\.\s*/,
-          ""
-        )
+        /^\d+\.\s*/,
+        ""
+      )
       : "Sangat Setuju";
 
   let html = `
@@ -171,6 +171,7 @@ function renderQuestion(question) {
                                ${isChecked}
                                aria-label="${option.text}">
                         <label for="${optionId}"></label>
+                        <span class="rating-value">${option.value}</span>
                     </div>
 `;
   });
